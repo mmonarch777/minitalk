@@ -24,4 +24,7 @@ fclean: clean
 
 re: fclean all
 
-.PHONY : clean fclean re all
+norm:
+	norminette $(SRC) $(HEADER)
+
+.PHONY : clean fclean re all norm

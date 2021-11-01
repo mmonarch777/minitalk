@@ -1,18 +1,30 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   client.c                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mmonarch <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/11/01 20:22:42 by mmonarch          #+#    #+#             */
+/*   Updated: 2021/11/01 20:22:44 by mmonarch         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "minitalk.h"
 
-void	sent_symbol(char **str, int pid)
+void	ft_sent_symbol(char str, int pid)
 {
 	int	count_bit;
-	int digit;
+	int	digit;
 
 	count_bit = 0;
 	while (count_bit <= 7)
 	{
-		digit = ((**str) >> count_bit) & 1;
+		digit = (str >> count_bit) & 1;
 		if (digit == 1)
-			digit = kill(pid, SIGUSR1);
+			kill(pid, SIGUSR1);
 		else if (digit == 0)
-			digit = kill(pid, SIGUSR2);
+			kill(pid, SIGUSR2);
 		else
 		{
 			ft_putendl_fd("Error send", 2);
@@ -21,7 +33,6 @@ void	sent_symbol(char **str, int pid)
 		count_bit++;
 		usleep(150);
 	}
-	(*str)++;
 }
 
 int	main(int argc, char **argv)
@@ -42,6 +53,6 @@ int	main(int argc, char **argv)
 		return (1);
 	}
 	while (*str)
-		sent_symbol(&str, pid);
-	ft_putchar('\n');
+		ft_sent_symbol(*(str++), pid);
+	ft_sent_symbol('\n', pid);
 }

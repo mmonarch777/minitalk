@@ -34,4 +34,8 @@ fclean: clean
 
 re: fclean all
 
-.PHONY: all clean fclean re libft
+norm:
+		make norm -C libmini
+		norminette $(CLIENT_FILE) $(SERVER_FILE) $(HEADER)
+
+.PHONY: all clean fclean re libft norm
