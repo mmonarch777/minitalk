@@ -1,7 +1,6 @@
 #ifndef MINITALK_H
 # define MINITALK_H
-
-#include "minilib/minilib.h"
+#include "libmini/libmini.h"
 # include <signal.h>
 
 #endif

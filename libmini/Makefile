@@ -1,12 +1,12 @@
-NAME = minilib.a
+NAME = libmini.a
 
-SRC = ft_putchar.c	ft_putnbr.c	ft_putstr.c
+SRC = ft_putchar.c	ft_putnbr.c	ft_putstr.c	ft_putendl_fd.c	ft_atoi.c
 
 OBJ = $(patsubst %.c,%.o,$(SRC))
 
 FLAGS = -Wall -Wextra -Werror
 
-HEADER = minilib.h
+HEADER = libmini.h
 
 all: $(NAME)
 
@@ -15,7 +15,6 @@ $(NAME): $(OBJ) $(HEADER)
 
 %.o: %.c
 	gcc $(FLAGS) -c $< -o $@
-
 
 clean:
 	rm -f $(OBJ)

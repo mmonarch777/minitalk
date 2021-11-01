@@ -1,4 +1,4 @@
-#include "minilib.h"
+#include "libmini.h"
 
 void	ft_putchar(char symbol)
 {

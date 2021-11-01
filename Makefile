@@ -13,27 +13,24 @@ FLAGS = -Wall -Wextra -Werror
 
 all: $(CLIENT) $(SERVER)
 
-$(CLIENT): $(OBJ_CLIENT) $(HEADER)
-		make -C minilib
-#		gcc -L minilib -lft -o $(OBJ_CLIENT) $(CLIENT)
-		gcc -o $(CLIENT) $(OBJ_CLIENT) -L minilib -lft
+$(CLIENT): $(OBJ_CLIENT) $(HEADER) libmini
+		make -C libmini
+		gcc -o $(CLIENT) $(OBJ_CLIENT) -L libmini -lmini
 
-$(SERVER): $(OBJ_SERVER) $(HEADER)
-		make -C minilib
-		gcc -L minilib -lft $(OBJ_SERVER) -o $(SERVER)
+$(SERVER): $(OBJ_SERVER) $(HEADER) libmini
+		make -C libmini
+		gcc -o $(SERVER) $(OBJ_SERVER) -L libmini -lmini
 
 %.o: %.c
 		gcc $(FLAGS) -c $< -o $@
 
 clean:
-		rm -f $(OBJ_CLIENT)
-		rm -f $(OBJ_SERVER)
-		make clean -C minilib
+		rm -f *.o
+		make clean -C libmini
 
 fclean: clean
-		rm -f $(OBJ_CLIENT)
-		rm -f $(OBJ_SERVER)
-		make fclean -C minilib
+		rm -f $(CLIENT) $(SERVER)
+		make fclean -C libmini
 
 re: fclean all
 

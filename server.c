@@ -7,4 +7,5 @@ int	main(void)
 	pid = getpid();
 	ft_putstr("Server PID: ");
 	ft_putnbr(pid);
+
 }
