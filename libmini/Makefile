@@ -11,16 +11,16 @@ HEADER = libmini.h
 all: $(NAME)
 
 $(NAME): $(OBJ) $(HEADER)
-	ar rcs $(NAME) $?
+	@ar crs $(NAME)  $?
 
 %.o: %.c
-	gcc $(FLAGS) -c $< -o $@
+	@gcc $(FLAGS) -c $< -o $@
 
 clean:
-	rm -f $(OBJ)
+	@rm -f $(OBJ)
 
 fclean: clean
-	rm -f $(NAME)
+	@rm -f $(NAME)
 
 re: fclean all
 

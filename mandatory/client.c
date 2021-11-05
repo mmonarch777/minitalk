@@ -6,11 +6,11 @@
 /*   By: mmonarch <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/01 20:22:42 by mmonarch          #+#    #+#             */
-/*   Updated: 2021/11/01 20:22:44 by mmonarch         ###   ########.fr       */
+/*   Updated: 2021/11/05 17:53:18 by mmonarch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "minitalk.h"
+#include "../include/minitalk.h"
 
 void	ft_sent_symbol(char str, int pid)
 {
@@ -40,7 +40,7 @@ int	main(int argc, char **argv)
 	char	*str;
 	int		pid;
 
-	if (argc != 3)
+	if (argc != 3 || !argv[2])
 	{
 		ft_putendl_fd("Don't right arguments. Need PID and \"string\"", 2);
 		return (1);

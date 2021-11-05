@@ -6,11 +6,11 @@
 /*   By: mmonarch <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/01 20:23:01 by mmonarch          #+#    #+#             */
-/*   Updated: 2021/11/01 20:23:02 by mmonarch         ###   ########.fr       */
+/*   Updated: 2021/11/05 17:56:28 by mmonarch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "minitalk.h"
+#include "../include/minitalk.h"
 
 void	ft_get_symbol(int sig)
 {

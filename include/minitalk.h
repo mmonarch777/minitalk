@@ -6,13 +6,13 @@
 /*   By: mmonarch <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/01 20:22:51 by mmonarch          #+#    #+#             */
-/*   Updated: 2021/11/01 20:22:54 by mmonarch         ###   ########.fr       */
+/*   Updated: 2021/11/02 16:22:05 by mmonarch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef MINITALK_H
 # define MINITALK_H
-# include "libmini/libmini.h"
+# include "../libmini/libmini.h"
 # include <signal.h>
 
 #endif
