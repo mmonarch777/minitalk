@@ -18,11 +18,11 @@ int	main(int argc, char **argv)
 		ft_putendl_fd("Error PID", 2);
 		return (1);
 	}
-	sig.sa_handler = ft_handler;
+//	sig.sa_handler = ft_handler;
 	sig.sa_flags = SA_SIGINFO;
 	sigaction(SIGUSR1, &sig, NULL);
 	sigaction(SIGUSR2, &sig, NULL);
-	ft_kill(pid, str);
+//	ft_kill(pid, str);
 	while (1)
 		usleep(150);
 }

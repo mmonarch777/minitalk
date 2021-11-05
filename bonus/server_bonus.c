@@ -9,7 +9,7 @@ int	main(void)
 	ft_putstr("Server PID: ");
 	ft_putnbr(pid);
 	ft_putchar('\n');
-	sig.sa_sig = ft_sig
+//	sig.sa_sig = ft_sig
 	sig.sa_flags = SA_SIGINFO;
 	sigaction(SIGUSR1, &sig, NULL);
 	sigaction(SIGUSR2, &sig, NULL);
