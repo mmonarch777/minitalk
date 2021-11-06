@@ -18,7 +18,7 @@ void	ft_get_symbol(int sig)
 	static int	counter = 0;
 
 	if (sig == SIGUSR1)
-		symbol = symbol + (1 << counter);
+		symbol |= 1 << counter;
 	counter++;
 	if (counter == 8)
 	{
