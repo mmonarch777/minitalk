@@ -1,18 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   minitalk.h                                         :+:      :+:    :+:   */
+/*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mmonarch <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/01 20:22:51 by mmonarch          #+#    #+#             */
-/*   Updated: 2021/11/06 11:04:01 by mmonarch         ###   ########.fr       */
+/*   Created: 2021/11/06 13:58:29 by mmonarch          #+#    #+#             */
+/*   Updated: 2021/11/06 13:58:33 by mmonarch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef MINITALK_H
-# define MINITALK_H
-# include "../libmini/libmini.h"
-# include <signal.h>
+#include "libmini.h"
 
-#endif
+int	ft_strlen(char *str)
+{
+	int	i;
+
+	i = 0;
+	while (*str++)
+		i++;
+	return (i);
+}

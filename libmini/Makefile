@@ -1,6 +1,6 @@
 NAME = libmini.a
 
-SRC = ft_putchar.c	ft_putnbr.c	ft_putstr.c	ft_putendl_fd.c	ft_atoi.c
+SRC = ft_putchar.c	ft_putnbr.c	ft_putstr.c	ft_putendl_fd.c	ft_atoi.c	ft_strlen.c
 
 OBJ = $(patsubst %.c,%.o,$(SRC))
 

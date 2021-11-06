@@ -20,4 +20,5 @@ void	ft_putnbr(int n);
 void	ft_putstr(char *str);
 void	ft_putendl_fd(char *s, int fd);
 int		ft_atoi(const char *str);
+int		ft_strlen(char *str);
 #endif
