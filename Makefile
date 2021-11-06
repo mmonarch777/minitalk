@@ -38,11 +38,11 @@ $(SERVER): $(OBJ_SERVER) $(HEADER) $(LIBMINI_DIR)
 		@gcc $(FLAGS) -c $< -o $@
 
 bonus: $(OBJ_SERVER_BONUS) $(OBJ_CLIENT_BONUS) $(HEADER) $(LIBMINI_DIR)
-		make -C $(LIBMINI_DIR)
-		gcc $(OBJ_SERVER_BONUS) -L$(LIBMINI_DIR) -lmini -o $(SERVER_BONUS)
-		gcc $(OBJ_CLIENT_BONUS) -L$(LIBMINI_DIR) -lmini -o $(CLIENT_BONUS)
-		echo $(FONT_COLOR_GREEN)[client_bonus executable create]$(FONT_COLOR_DEFAULT)
-		echo $(FONT_COLOR_GREEN)[server_bonus executable create]$(FONT_COLOR_DEFAULT)
+		@make -C $(LIBMINI_DIR)
+		@gcc $(OBJ_SERVER_BONUS) -L$(LIBMINI_DIR) -lmini -o $(SERVER_BONUS)
+		@gcc $(OBJ_CLIENT_BONUS) -L$(LIBMINI_DIR) -lmini -o $(CLIENT_BONUS)
+		@echo $(FONT_COLOR_GREEN)[client_bonus executable create]$(FONT_COLOR_DEFAULT)
+		@echo $(FONT_COLOR_GREEN)[server_bonus executable create]$(FONT_COLOR_DEFAULT)
 
 clean:
 		@rm -f $(OBJ_SERVER_BONUS) $(OBJ_CLIENT_BONUS)
@@ -57,7 +57,7 @@ fclean: clean
 re: fclean all
 
 norm:
-		make norm -C $(LIBMINI_DIR)
-		norminette $(CLIENT_FILE) $(SERVER_FILE) $(HEADER) $(SERVER_BONUS_FILE) $(CLIENT_BONUS_FILE)
+		@make norm -C $(LIBMINI_DIR)
+		@norminette $(CLIENT_FILE) $(SERVER_FILE) $(HEADER) $(SERVER_BONUS_FILE) $(CLIENT_BONUS_FILE)
 
 .PHONY: all clean fclean re libft norm bonus
